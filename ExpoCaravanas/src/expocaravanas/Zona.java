@@ -27,11 +27,9 @@ public class Zona {
         this.entradas = entradas;
     }
      
-    public void ventaentradas(){
-        if (entradas==0){
-            System.out.println("No quedan entradas.");
-        }
+    public void ventaentradas(int entradas){
         
+        this.entradas= this.entradas-entradas;
     }
     @Override
     public String toString(){

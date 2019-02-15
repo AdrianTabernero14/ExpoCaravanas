@@ -19,9 +19,11 @@ public class ExpoCaravanas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = 1;
-Zona principal=new Zona(1000);
-Zona compraventa=new Zona (200);
-Zona vip =new Zona (25);
+        int t;
+        int entradas;
+        Zona principal = new Zona(1000);
+        Zona compraventa = new Zona(200);
+        Zona vip = new Zona(25);
         while (n < 3) {
             System.out.println("1.\tMostrar número de entradas libres"
                     + "\n2.\tVender entradas"
@@ -36,8 +38,35 @@ Zona vip =new Zona (25);
                         System.out.println(vip);
                         break;
                     case 2:
+                        System.out.println("¿Que tipo de entras desea comprar?"
+                                + "\n1.\tEntras principales"
+                                + "\n2.\tEntras en la Zona Compra y Venta"
+                                + "\n3.\tEntras vip");
+                        t = sc.nextInt();
+                        switch (t) {
+                            case 1:
+                                if(<=0){
+                                    System.out.println("No quedan entradas");
+                                }
+                                System.out.println("¿Cuantas entradas desea comprar?");
+                                entradas = sc.nextInt();
+                                principal.ventaentradas(entradas);
+                                System.out.println(principal);
+                                break;
+                            case 2:
+                                System.out.println("¿Cuantas entradas desea comprar?");
+                                entradas = sc.nextInt();
+                                compraventa.ventaentradas(entradas);
+                                System.out.println(compraventa);
+                                break;
+                            case 3:
+                                System.out.println("¿Cuantas entradas desea comprar?");
+                                entradas = sc.nextInt();
+                                vip.ventaentradas(entradas);
+                                System.out.println(vip);
+                                break;
+                        }
 
-        
                         break;
                 }
             }
