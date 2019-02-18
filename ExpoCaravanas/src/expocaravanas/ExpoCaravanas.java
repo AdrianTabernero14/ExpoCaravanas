@@ -45,29 +45,53 @@ public class ExpoCaravanas {
                         t = sc.nextInt();
                         switch (t) {
                             case 1:
-                                if(<=0){
-                                    System.out.println("No quedan entradas");
+                                if (principal.getEntradas() <= 0) {
+                                    System.out.println("Ya no quedan entradas");
+                                } else {
+                                    System.out.println(principal);
+                                    System.out.println("¿Cuantas entradas desea comprar?");
+                                    entradas = sc.nextInt();
+                                    if (entradas > principal.getEntradas()) {
+                                        System.out.println("No hay existencias disponibles");
+                                    } else if (entradas <= principal.getEntradas()) {
+                                        principal.ventaentradas(entradas);
+
+                                    }
                                 }
-                                System.out.println("¿Cuantas entradas desea comprar?");
-                                entradas = sc.nextInt();
-                                principal.ventaentradas(entradas);
-                                System.out.println(principal);
+
                                 break;
                             case 2:
-                                System.out.println("¿Cuantas entradas desea comprar?");
-                                entradas = sc.nextInt();
-                                compraventa.ventaentradas(entradas);
-                                System.out.println(compraventa);
+                                if (compraventa.getEntradas() <= 0) {
+                                    System.out.println("Ya no quedan entradas");
+                                } else {
+                                    System.out.println(compraventa);
+                                    System.out.println("¿Cuantas entradas desea comprar?");
+                                    entradas = sc.nextInt();
+                                    if (entradas > compraventa.getEntradas()) {
+                                        System.out.println("No hay existencias disponibles");
+                                    } else if (entradas <= compraventa.getEntradas()) {
+                                        compraventa.ventaentradas(entradas);
+
+                                    }
+                                }
                                 break;
                             case 3:
-                                System.out.println("¿Cuantas entradas desea comprar?");
-                                entradas = sc.nextInt();
-                                vip.ventaentradas(entradas);
-                                System.out.println(vip);
+                                if (vip.getEntradas() <= 0) {
+                                    System.out.println("Ya no quedan entradas");
+                                } else {
+                                    System.out.println(vip);
+                                    System.out.println("¿Cuantas entradas desea comprar?");
+                                    entradas = sc.nextInt();
+                                    if (entradas > vip.getEntradas()) {
+                                        System.out.println("No hay existencias disponibles");
+                                    } else if (entradas <= vip.getEntradas()) {
+                                        vip.ventaentradas(entradas);
+
+                                    }
+                                }
                                 break;
                         }
 
-                        break;
                 }
             }
         }
